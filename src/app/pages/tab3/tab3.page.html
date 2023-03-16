@@ -1,0 +1,38 @@
+<ion-header class="head">
+  <ion-toolbar>
+    <ion-title>Caballos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/add-caballo">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let caballo of caballos$|async" (click)="openDetailModal(caballo)">
+      <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="3">
+            <ion-thumbnail>
+              <!-- <img [src]="product.imageUrl" /> -->
+            </ion-thumbnail>
+          </ion-col>
+          <ion-col size="9">
+          
+            <ion-card-title>{{caballo.Nombre}}</ion-card-title>
+            <ion-card-title>{{caballo.Peso}}</ion-card-title>
+            <ion-card-title>{{caballo.Fecha_Nacimiento}}</ion-card-title>
+            <ion-card-title>{{caballo.Raza}}</ion-card-title>
+            <ion-card-title>{{caballo.Propietario}}</ion-card-title>
+
+          
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

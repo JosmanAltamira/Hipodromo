@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> {{isEditMode ? 'Actualizar'  : 'Agregar'}} Caballo</ion-title>
+    <ion-buttons slot="start" *ngIf="!isEditMode">
+      <ion-back-button defaultHref="caballos"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" *ngIf="isEditMode">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding"> 
+<form [formGroup]="form">
+  <ion-item counter="true">
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input maxlength="25" label="Alphanumeric Characters" (ionInput)="onInputL($event)" #ionInputLe formControlName="Nombre"></ion-input>
+  </ion-item>
+  <ion-item >
+    <ion-label position="floating">Peso</ion-label>
+    <ion-input  formControlName="Peso"></ion-input>
+  </ion-item>
+  <ion-item >
+    <ion-label position="floating">Fecha de nacimiento</ion-label>
+    <ion-input  formControlName="Fecha_Nacimiento"></ion-input>
+  </ion-item>
+  <ion-item >
+    <ion-label position="floating">Raza</ion-label>
+    <ion-input  formControlName="Raza"></ion-input>
+  </ion-item>
+  <ion-item >
+    <ion-label position="floating">Propietario</ion-label>
+    <ion-input  formControlName="Propietario"></ion-input>
+  </ion-item>
+
+
+  <ion-button  expand="block" (click)="submitCaballo()" [disabled]="form.invalid">
+   {{isEditMode ? 'Actualizar'  : 'Guardar'}} 
+  </ion-button>
+</form>
+</ion-content>
