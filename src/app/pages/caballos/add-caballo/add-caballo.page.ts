@@ -8,7 +8,7 @@ import { CaballosService } from '../../../services/caballos.service';
 import type { IonInput } from '@ionic/angular';
 
 @Component({
-  selector: 'app-add-product',
+  selector: 'app-add-caballo',
   templateUrl: './add-caballo.page.html',
   styleUrls: ['./add-caballo.page.scss'],
 })

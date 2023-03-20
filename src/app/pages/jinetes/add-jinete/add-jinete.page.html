@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> {{isEditMode ? 'Actualizar'  : 'Agregar'}} Jinete</ion-title>
+    <ion-buttons slot="start" *ngIf="!isEditMode">
+      <ion-back-button defaultHref="jinetes"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" *ngIf="isEditMode">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding"> 
+<form [formGroup]="form">
+
+  <ion-item >
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input  formControlName="nombre"></ion-input>
+  </ion-item>
+
+  <ion-item >
+    <ion-label position="floating">Edad</ion-label>
+    <ion-input  formControlName="edad"></ion-input>
+  </ion-item>
+
+  <ion-item >
+    <ion-label position="floating">Nacionalidad</ion-label>
+    <ion-input  formControlName="nacionalidad"></ion-input>
+  </ion-item>
+
+
+  <ion-button  expand="block" (click)="submitJinete()" [disabled]="form.invalid" >
+   {{isEditMode ? 'Actualizar'  : 'Guardar'}} 
+  </ion-button>
+</form>
+</ion-content>

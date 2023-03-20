@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{jinete.nombre}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+  <div class="ion-padding">
+    <ion-text>
+      <h1>Distancia: {{jinete.edad}}</h1>
+      <h1>Participantes: {{jinete.nacionalidad}}</h1>
+    </ion-text>
+
+    <ion-button expand="block" (click)="openEditModal()">Editar</ion-button>
+    <ion-button expand="block" color="danger" (click)="onDeleteJinete()">Eliminar</ion-button>
+  </div>
+</ion-content>

@@ -6,7 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { TabsPageRoutingModule } from './tabs-routing.module';
 
 import { TabsPage } from './tabs.page';
-import { DetailComponent } from '../caballos/detail/detail.component';
+import { D_CaballoComponent } from '../caballos/d_caballo/d_caballo.component';
+import { D_CarreraComponent } from '../carreras/d_carrera/d_carrera.component';
+import { D_JineteComponent } from '../jinetes/d_jinete/d_jinete.component';
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { DetailComponent } from '../caballos/detail/detail.component';
     FormsModule,
     TabsPageRoutingModule
   ],
-  declarations: [TabsPage,DetailComponent]
+  declarations: [TabsPage, D_CaballoComponent, D_CarreraComponent, D_JineteComponent]
 })
 export class TabsPageModule {}

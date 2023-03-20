@@ -1,0 +1,35 @@
+<ion-header class="head">
+    <ion-toolbar>
+        <ion-title>Jinetes</ion-title>
+        <ion-buttons slot="end">
+          <ion-button routerLink="/add-jinete">
+            <ion-icon slot="icon-only" name="add"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let jinete of jinetes$|async" (click)="openDetailModal(jinete)">
+      <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="3">
+            <ion-thumbnail>
+              <!-- <img [src]="product.imageUrl" /> -->
+            </ion-thumbnail>
+          </ion-col>
+          <ion-col size="9">
+          
+            <ion-card-title>{{jinete.nombre}}</ion-card-title>
+            <ion-card-subtitle>Edad: {{jinete.edad}}</ion-card-subtitle>
+            <ion-card-subtitle>Nacionalidad: {{jinete.nacionalidad}}</ion-card-subtitle>
+
+          
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,6 @@
+{
+	"appId": "com.hipodromo.app",
+	"appName": "Hipodromo",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

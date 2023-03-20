@@ -1,0 +1,18 @@
+<ion-header class="head">
+    <ion-toolbar>
+      <ion-title>Carreras</ion-title>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/add-carrera">
+          <ion-icon slot="icon-only" name="add"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-card *ngFor="let carrera of carreras$|async" (click)="openDetailModal(carrera)">
+        <ion-card-content>
+          <pre>{{ carrera | json }}</pre>
+        </ion-card-content>
+      </ion-card>
+    </ion-content>

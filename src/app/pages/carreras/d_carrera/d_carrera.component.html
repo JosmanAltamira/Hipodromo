@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{carrera.fecha}}{{carrera.hora}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+  <div class="ion-padding">
+    <ion-text>
+      <h1>Distancia: {{carrera.distancia}}</h1>
+      <h1>Participantes: {{carrera.numero_participantes}}</h1>
+    </ion-text>
+
+    <ion-button expand="block" (click)="openEditModal()">Editar</ion-button>
+    <ion-button expand="block" color="danger" (click)="onDeleteCarrera()">Eliminar</ion-button>
+  </div>
+</ion-content>

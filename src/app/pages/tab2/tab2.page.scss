@@ -1,54 +1,15 @@
-ion-header{
-    position: absolute;
+ion-header {
+  ion-toolbar {
+    --background: #DDC283;
+    --color: #8C512E;
   }
+}
 
-  ion-content{
-    --ion-background-color:#ffffff!important;
-    --ion-item-background: transparent !important;
-  }
-  ion-toolbar{
-    --background: #6eb74a;
-    --ion-background-color: transparent;
-    --opacity: 0;
-  }
+ion-content{
+  --ion-background-color:#ffffff!important;
+  --ion-item-background: transparent !important;
+}
 
 ion-card-content{
-  background-color: #6eb74a;// color contenido de card
+  background-color: #ddc283;
 }
-
-ion-card-header{
-  
-  background-color: #6eb74a;//color de titulo de card
-  
-}
-
-.chart-container{
-  position: relative;
-  margin:auto;
-}
-
-.puntoscard{
-  
-
-  ion-card-content{
-    background-color: #dce738de;// color contenido de card
-   border-radius: 30px;
-   
-  }
-  ion-card-title{
-    color: #6eb74a;
-    text-align: center;
-  }
-
-   background: rgb(255, 255, 255);
-   box-shadow: none !important; 
-}
-
-.grafica{
-
-  ion-card-header{
-    color: #ffffff;
-    text-align: center;
-  }
-}
-

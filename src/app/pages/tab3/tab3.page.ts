@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { DetailComponent } from '../caballos/detail/detail.component';
+import { D_CaballoComponent } from '../caballos/d_caballo/d_caballo.component';
 import { CaballosService } from '../../services/caballos.service';
 import { Caballo } from './caballo.model';
 
@@ -35,7 +35,7 @@ export class Tab3Page implements OnInit {
 
   async openDetailModal(caballo: Caballo){
     const modal = await this.modalCtrl.create({
-      component: DetailComponent,
+      component: D_CaballoComponent,
       componentProps: {caballo},
     });
     

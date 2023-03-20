@@ -35,6 +35,14 @@ ion-header {
   }
 }
 
+ion-content{
+  --ion-background-color:#ffffff!important;
+  --ion-item-background: transparent !important;
+}
+
+ion-card-content{
+  background-color: #ddc283;
+}
 
 
  
