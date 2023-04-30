@@ -7,8 +7,8 @@ import { Caballo } from '../pages/tab3/caballo.model';
     providedIn: 'root',
 })
 export class CaballosService {
-    apiUrl = 'http://192.168.100.138/hipodromo_api/public/api';
-    // apiUrl = 'http://localhost/hipodromo_api/public/api';
+    // apiUrl = 'http://192.168.100.138/hipodromo_api/public/api';
+    apiUrl = 'http://localhost/hipodromo_api/public/api';
 
     constructor(private http: HttpClient ){}
 

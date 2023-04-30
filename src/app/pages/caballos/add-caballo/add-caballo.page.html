@@ -17,23 +17,23 @@
 <form [formGroup]="form">
   <ion-item counter="true">
     <ion-label position="floating">Nombre</ion-label>
-    <ion-input maxlength="25" label="Alphanumeric Characters" (ionInput)="onInputL($event)" #ionInputLe formControlName="Nombre"></ion-input>
+    <ion-input maxlength="25" label="Alphanumeric Characters" (ionInput)="onNombre($event)" #ionInputNombre formControlName="Nombre"></ion-input>
   </ion-item>
   <ion-item >
     <ion-label position="floating">Peso</ion-label>
-    <ion-input  formControlName="Peso"></ion-input>
+    <ion-input  formControlName="Peso" (ionInput)="onPeso($event)" #ionInputPeso></ion-input>
   </ion-item>
   <ion-item >
     <ion-label position="floating">Fecha de nacimiento</ion-label>
-    <ion-input  formControlName="Fecha_Nacimiento"></ion-input>
+    <ion-input maxlength="25" formControlName="Fecha_Nacimiento" (ionInput)="onNacimiento($event)" #ionInputNacimiento></ion-input>
   </ion-item>
   <ion-item >
     <ion-label position="floating">Raza</ion-label>
-    <ion-input  formControlName="Raza"></ion-input>
+    <ion-input  formControlName="Raza" (ionInput)="onRaza ($event)" #ionInputRaza></ion-input>
   </ion-item>
   <ion-item >
     <ion-label position="floating">Propietario</ion-label>
-    <ion-input  formControlName="Propietario"></ion-input>
+    <ion-input  formControlName="Propietario" (ionInput)="onPropietario($event)" #ionInputPropietario></ion-input>
   </ion-item>
 
 

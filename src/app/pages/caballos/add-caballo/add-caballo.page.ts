@@ -18,8 +18,12 @@ export class AddCaballoPage implements OnInit {
   form: FormGroup
   inputModel = '';
 
-  @ViewChild('ionInputEl', { static: true }) ionInputEl!: IonInput;
-  @ViewChild('ionInputLe', { static: true }) ionInputLe!: IonInput;
+  @ViewChild('ionInputNombre', { static: true }) ionInputNombre!: IonInput;
+  @ViewChild('ionInputRaza', { static: true }) ionInputRaza!: IonInput;
+  @ViewChild('ionInputNacimiento', { static: true }) ionInputNacimiento!: IonInput;
+  @ViewChild('ionInputPeso', { static: true }) ionInputPeso!: IonInput;
+  @ViewChild('ionInputPropietario', { static: true }) ionInputPropietario!: IonInput;
+
 
   constructor(
     private caballosService: CaballosService, 
@@ -89,18 +93,34 @@ export class AddCaballoPage implements OnInit {
     });
   }
 
-  //no caracteres especiales
-  onInput(ev) {
-    const value = ev.target!.value;
-    // Removes non alphanumeric characters
-    const filteredValue = value.replace(/[^a-zA-Z0-9]+/g,'');
-    this.ionInputEl.value = this.inputModel = filteredValue;
-  }
 
-  //no caracteres especiales y no numeros
-  onInputL(ev) {
+  onNombre(ev) {
     const value = ev.target!.value;
     const filteredValue = value.replace(/[^a-zA-Z ]+/g,'');
-    this.ionInputLe.value = this.inputModel = filteredValue;
+    this.ionInputNombre.value = this.inputModel = filteredValue;
+  }
+
+  onRaza(ev) {
+    const value = ev.target!.value;
+    const filteredValue = value.replace(/[^a-zA-Z]+/g,'');
+    this.ionInputRaza.value = this.inputModel = filteredValue;
+  }
+
+  onNacimiento(ev) {
+    const value = ev.target!.value;
+    const filteredValue = value.replace(/[^0-9]+/g,'');
+    this.ionInputNacimiento.value = this.inputModel = filteredValue;
+  }
+
+  onPeso(ev) {
+    const value = ev.target!.value;
+    const filteredValue = value.replace(/[^0-9]+/g,'');
+    this.ionInputPeso.value = this.inputModel = filteredValue;
+  }
+
+  onPropietario(ev) {
+    const value = ev.target!.value;
+    const filteredValue = value.replace(/[^a-zA-Z]+/g,'');
+    this.ionInputPropietario.value = this.inputModel = filteredValue;
   }
 }
