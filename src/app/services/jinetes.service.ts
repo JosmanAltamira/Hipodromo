@@ -7,8 +7,8 @@ import { Jinete } from '../pages/tab2/jinete.model';
     providedIn: 'root',
 })
 export class JinetesService {
-    apiUrl = 'http://192.168.100.138/hipodromo_api/public/api';
-    // apiUrl = 'http://localhost/hipodromo_api/public/api';
+    // apiUrl = 'http://192.168.100.138/hipodromo_api/public/api';
+    apiUrl = 'http://localhost/hipodromo_api/public/api';
 
     constructor(private http: HttpClient ){}
 

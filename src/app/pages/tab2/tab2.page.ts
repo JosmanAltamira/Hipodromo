@@ -1,8 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { D_CaballoComponent } from '../caballos/d_caballo/d_caballo.component';
 import { JinetesService } from '../../services/jinetes.service';
 import { Jinete } from './jinete.model';
 import { D_JineteComponent } from '../jinetes/d_jinete/d_jinete.component';
@@ -29,9 +28,9 @@ export class Tab2Page implements OnInit  {
     loading.present();
 
     this.jinetes$ = this.jinetesService.getJinetes().pipe(
-      tap((caballos) => {
+      tap((jinetes) => {
         loading.dismiss();
-        return caballos;
+        return jinetes;
       })
     );
   }

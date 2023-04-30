@@ -3,10 +3,9 @@ import {  FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms
 import { LoadingController, ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { Carrera } from '../../tab1/carrera.model';
 import type { IonInput } from '@ionic/angular';
 import { Jinete } from '../../tab2/jinete.model';
-import { JinetesService } from 'src/app/services/jinetes.service';
+import { JinetesService } from '../../../services/jinetes.service';
 
 @Component({
   selector: 'app-add-jinete',
@@ -14,13 +13,14 @@ import { JinetesService } from 'src/app/services/jinetes.service';
   styleUrls: ['./add-jinete.page.scss'],
 })
 export class AddJinetePage implements OnInit {
-  @Input() jinete : Jinete;
+ @Input() jinete : Jinete;
   isEditMode = false;
   form: FormGroup
   inputModel = '';
 
-  @ViewChild('ionInputEl', { static: true }) ionInputEl!: IonInput;
-  @ViewChild('ionInputLe', { static: true }) ionInputLe!: IonInput;
+  @ViewChild('ionInputNombre', { static: true }) ionInputNombre!: IonInput;
+  @ViewChild('ionInputEdad', { static: true }) ionInputEdad!: IonInput;
+  @ViewChild('ionInputNacionalidad', { static: true }) ionInputNacionalidad!: IonInput;
 
   constructor(
     private jinetesService: JinetesService, 
@@ -43,7 +43,6 @@ export class AddJinetePage implements OnInit {
       nombre: new FormControl(null,[Validators.required]),
       edad: new FormControl(null,[Validators.required]),
       nacionalidad: new FormControl(null,[Validators.required]),
-
     })
   }
 
@@ -62,7 +61,7 @@ export class AddJinetePage implements OnInit {
   
 
  async submitJinete(){
-   const loading = await this.loadingCtrl.create({message:'Loading...'});
+   const loading = await this.loadingCtrl.create({message:'Procesando...'});
    loading.present();
 
    let response: Observable <Jinete>;
@@ -87,18 +86,21 @@ export class AddJinetePage implements OnInit {
     });
   }
 
-  //no caracteres especiales
-  onInput(ev) {
-    const value = ev.target!.value;
-    // Removes non alphanumeric characters
-    const filteredValue = value.replace(/[^a-zA-Z0-9]+/g,'');
-    this.ionInputEl.value = this.inputModel = filteredValue;
-  }
-
-  //no caracteres especiales y no numeros
-  onInputL(ev) {
+  onNombre(ev) {
     const value = ev.target!.value;
     const filteredValue = value.replace(/[^a-zA-Z ]+/g,'');
-    this.ionInputLe.value = this.inputModel = filteredValue;
+    this.ionInputNombre.value = this.inputModel = filteredValue;
+  }
+
+  onEdad(ev) {
+    const value = ev.target!.value;
+    const filteredValue = value.replace(/[^0-9]+/g,'');
+    this.ionInputEdad.value = this.inputModel = filteredValue;
+  }
+
+  onNacionalidad(ev) {
+    const value = ev.target!.value;
+    const filteredValue = value.replace(/[^a-zA-Z]+/g,'');
+    this.ionInputNacionalidad.value = this.inputModel = filteredValue;
   }
 }

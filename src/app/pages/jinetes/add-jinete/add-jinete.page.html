@@ -18,17 +18,17 @@
 
   <ion-item >
     <ion-label position="floating">Nombre</ion-label>
-    <ion-input  formControlName="nombre"></ion-input>
+    <ion-input  formControlName="nombre" (ionInput)="onNombre($event)" #ionInputNombre></ion-input>
   </ion-item>
 
   <ion-item >
     <ion-label position="floating">Edad</ion-label>
-    <ion-input  formControlName="edad"></ion-input>
+    <ion-input  formControlName="edad" (ionInput)="onEdad($event)" #ionInputEdad></ion-input>
   </ion-item>
 
   <ion-item >
     <ion-label position="floating">Nacionalidad</ion-label>
-    <ion-input  formControlName="nacionalidad"></ion-input>
+    <ion-input  formControlName="nacionalidad" (ionInput)="onNacionalidad($event)" #ionInputNacionalidad></ion-input>
   </ion-item>
 
 
