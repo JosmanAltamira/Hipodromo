@@ -18,22 +18,22 @@
 
   <ion-item >
     <ion-label position="floating">Fecha</ion-label>
-    <ion-input  formControlName="fecha"></ion-input>
+    <ion-input  formControlName="fecha" (ionInput)="onFecha($event)" #ionInputFecha></ion-input>
   </ion-item>
 
   <ion-item >
     <ion-label position="floating">Hora</ion-label>
-    <ion-input  formControlName="hora"></ion-input>
+    <ion-input  formControlName="hora" (ionInput)="onHora($event)" #ionInputHora></ion-input>
   </ion-item>
 
   <ion-item >
     <ion-label position="floating">Distancia</ion-label>
-    <ion-input  formControlName="distancia"></ion-input>
+    <ion-input  formControlName="distancia" (ionInput)="onDistancia($event)" #ionInputDistancia></ion-input>
   </ion-item>
 
   <ion-item >
     <ion-label position="floating">Numero de participantes:</ion-label>
-    <ion-input  formControlName="numero_participantes"></ion-input>
+    <ion-input  formControlName="numero_participantes" (ionInput)="onPa($event)" #ionInputPa></ion-input>
   </ion-item>
 
   <ion-button  expand="block" (click)="submitCarrera()" [disabled]="form.invalid">

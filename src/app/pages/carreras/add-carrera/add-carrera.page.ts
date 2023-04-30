@@ -18,8 +18,10 @@ export class AddCarreraPage implements OnInit {
   form: FormGroup
   inputModel = '';
 
-  @ViewChild('ionInputEl', { static: true }) ionInputEl!: IonInput;
-  @ViewChild('ionInputLe', { static: true }) ionInputLe!: IonInput;
+  @ViewChild('ionInputFecha', { static: true }) ionInputFecha!: IonInput;
+  @ViewChild('ionInputHora', { static: true }) ionInputHora!: IonInput;
+  @ViewChild('ionInputDistancia', { static: true }) ionInputDistancia!: IonInput;
+  @ViewChild('ionInputPa', { static: true }) ionInputPa!: IonInput;
 
   constructor(
     private carrerasService: CarrerasService, 
@@ -62,7 +64,7 @@ export class AddCarreraPage implements OnInit {
   
 
  async submitCarrera(){
-   const loading = await this.loadingCtrl.create({message:'Loading...'});
+   const loading = await this.loadingCtrl.create({message:'Procesando...'});
    loading.present();
 
    let response: Observable <Carrera>;
@@ -88,17 +90,28 @@ export class AddCarreraPage implements OnInit {
   }
 
   //no caracteres especiales
-  onInput(ev) {
+  onFecha(ev) {
     const value = ev.target!.value;
-    // Removes non alphanumeric characters
-    const filteredValue = value.replace(/[^a-zA-Z0-9]+/g,'');
-    this.ionInputEl.value = this.inputModel = filteredValue;
+    const filteredValue = value.replace(/[^0-9]+/g,'');
+    this.ionInputFecha.value = this.inputModel = filteredValue;
   }
 
   //no caracteres especiales y no numeros
-  onInputL(ev) {
+  onHora(ev) {
     const value = ev.target!.value;
-    const filteredValue = value.replace(/[^a-zA-Z ]+/g,'');
-    this.ionInputLe.value = this.inputModel = filteredValue;
+    const filteredValue = value.replace(/[^0-9:]+/g,'');
+    this.ionInputHora.value = this.inputModel = filteredValue;
+  }
+
+  onDistancia(ev) {
+    const value = ev.target!.value;
+    const filteredValue = value.replace(/[^0-9]+/g,'');
+    this.ionInputDistancia.value = this.inputModel = filteredValue;
+  }
+
+  onPa(ev) {
+    const value = ev.target!.value;
+    const filteredValue = value.replace(/[^0-9]+/g,'');
+    this.ionInputPa.value = this.inputModel = filteredValue;
   }
 }

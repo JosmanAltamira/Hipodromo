@@ -1,6 +1,5 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{carrera.fecha}}{{carrera.hora}}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="closeModal()">
         <ion-icon slot="start" name="close"></ion-icon>
@@ -14,11 +13,15 @@
 
   <div class="ion-padding">
     <ion-text>
-      <h1>Distancia: {{carrera.distancia}}</h1>
-      <h1>Participantes: {{carrera.numero_participantes}}</h1>
+      <ion-title>Fecha:{{carrera.fecha}}{{carrera.hora}}</ion-title>
+      <ion-title>Distancia: {{carrera.distancia}}</ion-title>
+      <ion-title>Participantes: {{carrera.numero_participantes}}</ion-title>
     </ion-text>
+
+    <br><br>
 
     <ion-button expand="block" (click)="openEditModal()">Editar</ion-button>
     <ion-button expand="block" color="danger" (click)="onDeleteCarrera()">Eliminar</ion-button>
+    
   </div>
 </ion-content>

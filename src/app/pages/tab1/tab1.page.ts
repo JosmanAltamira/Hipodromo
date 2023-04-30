@@ -18,11 +18,12 @@ export class Tab1Page implements OnInit {
   constructor(
               private carrerasService:CarrerasService, 
               private loadingCtrl: LoadingController,
-              private modalCtrl:ModalController) 
+              private modalCtrl:ModalController
+              ) 
               { }
 
   async ngOnInit() {
-    const loading = await this.loadingCtrl.create({message:'Loading...'});
+    const loading = await this.loadingCtrl.create({message:'Loading...', spinner: 'circles',});
     loading.present();
 
     this.carreras$ = this.carrerasService.getCarreras().pipe(
