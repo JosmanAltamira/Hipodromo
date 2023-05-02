@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AddCarreraPageRoutingModule } from './add-carrera-routing.module';
 
 import { AddCarreraPage } from './add-carrera.page';
+import { DatePicker } from '@ionic-native/date-picker/ngx';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { AddCarreraPage } from './add-carrera.page';
     IonicModule,
     AddCarreraPageRoutingModule
   ],
+  providers: [DatePicker],
   declarations: [AddCarreraPage]
 })
 export class AddCarreraPageModule {}

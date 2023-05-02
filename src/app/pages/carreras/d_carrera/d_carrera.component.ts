@@ -5,6 +5,7 @@ import { AddCarreraPage  } from '../add-carrera/add-carrera.page';
 import { CarrerasService } from '../../../services/carreras.service';
 import { Carrera } from '../../tab1/carrera.model';
 
+
 @Component({
   selector: 'app-detail',
   templateUrl: './d_carrera.component.html',
