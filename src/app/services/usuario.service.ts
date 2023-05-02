@@ -5,8 +5,8 @@ import { Storage } from '@ionic/storage-angular';
 import { NavController } from '@ionic/angular';
 
 // const URL = 'http://192.168.100.138/smart_crud2/public/api';
-// const URL = 'http://localhost/hipodromo_api/public/api';
-const URL = 'http://192.168.100.138/hipodromo_api/public/api';
+const URL = 'http://localhost/hipodromo_api/public/api';
+// const URL = 'http://192.168.100.138/hipodromo_api/public/api';
 
 @Injectable({
   providedIn: 'root'

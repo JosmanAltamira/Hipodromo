@@ -1,8 +1,4 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
-    <!-- <ion-title>loginscreen</ion-title> -->
-  </ion-toolbar>
-  <!-- <ion-img class="logo" src="assets/images/logo.png"></ion-img> -->
   <ion-buttons slot="start">
   <ion-back-button defaulthref="login" text=""></ion-back-button>
   </ion-buttons>
@@ -14,39 +10,30 @@
 
 <ion-slides class="mainSlider" #slidePrincipal >
   <ion-slide>
-    <form (ngSubmit)="login(flogin)" #flogin="ngForm">
+    <form [formGroup]="form" (ngSubmit)="login(form)">
       <ion-grid fixed>
         <ion-row>
           <ion-col>
             <ion-list>
-              <!-- <ion-item>
-                <ion-label>Correo electrónico </ion-label>
-                </ion-item> -->
-                <ion-item>
 
-                  <ion-input name="email" type="email" required [(ngModel)]="loginUser.email" placeholder="Correo electronico">
-                    <ion-icon name="mail-outline"></ion-icon>
-                    </ion-input>
+              <ion-item>
+              <ion-input name="email" type="email" required  placeholder="Correo electronico" formControlName="email">
+              <ion-icon name="mail-outline"></ion-icon>
+              </ion-input>
               </ion-item>
               
-
-              <!-- <ion-item>
-                <ion-label>Contraseña</ion-label>
-                </ion-item> -->
-                <ion-item>
-                
-                <ion-input name="password" type="password" required [(ngModel)]="loginUser.password"   placeholder="Contraseña">
-                  <ion-icon name="lock-closed"></ion-icon>
-                  </ion-input>
-                  
-                
+              <ion-item>
+              <ion-input name="password" type="password" required   placeholder="Contraseña" formControlName="password">
+              <ion-icon name="lock-closed"></ion-icon>
+              </ion-input>
               </ion-item>
+
             </ion-list>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-button class="buton1" type="submit"  shape="round">Ingresar</ion-button>
+            <ion-button class="buton1" type="submit"  [disabled]="!form.valid">Ingresar</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -54,55 +41,6 @@
     
   </ion-slide>
   <ion-slide>
-    <ion-grid fixed>
-      /*...........................registro..................................*/
-      <form  >
-        <ion-row>
-          <ion-col>
-            <ion-list>           
-              <!-- <ion-item>
-              <ion-label>Email</ion-label>
-              </ion-item> -->
-              <ion-item>
-
-                <ion-input name="email" type="email" required [(ngModel)]="registerUser.email" placeholder="Correo electronico">
-                  <ion-icon name="mail-outline"></ion-icon>
-                  </ion-input>
-
-              </ion-item>
-
-              <!-- <ion-item>
-              <ion-label>Nombre</ion-label>
-              </ion-item> -->
-              <ion-item>
-                <ion-input name="name" type="text" required [(ngModel)]="registerUser.nombre"   placeholder="Nombre">
-                  <ion-icon name="person-outline"></ion-icon>
-                  </ion-input>
-
-              </ion-item>
-
-              <!-- <ion-item>
-              <ion-label>Password</ion-label>
-              </ion-item> -->
-              <ion-item>
-                <ion-input name="password" type="password" required [(ngModel)]="registerUser.password"   placeholder="Contraseña">
-                  <ion-icon name="lock-closed"></ion-icon>
-                  </ion-input>
-              </ion-item>
-          </ion-list>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-
-              <ion-button type="submit" color="#DDC283" shape="round">
-                  Crear usuario
-              </ion-button>
-              
-          </ion-col>
-        </ion-row>
-      </form>
-    </ion-grid>
   </ion-slide>
 </ion-slides>
 <div class="ion-card-footer">
