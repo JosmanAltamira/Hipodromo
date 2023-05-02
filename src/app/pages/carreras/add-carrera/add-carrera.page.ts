@@ -6,6 +6,7 @@ import { take } from 'rxjs/operators';
 import { Carrera } from '../../tab1/carrera.model';
 import { CarrerasService } from '../../../services/carreras.service';
 import type { IonInput } from '@ionic/angular';
+import { DatePicker } from '@ionic-native/date-picker/ngx';
 
 @Component({
   selector: 'app-add-carrera',
@@ -27,6 +28,7 @@ export class AddCarreraPage implements OnInit {
     private carrerasService: CarrerasService, 
     private loadingCtrl:LoadingController,
     private modalCtrl: ModalController,
+    private datePicker: DatePicker
     ) { }
 
   ngOnInit() {
