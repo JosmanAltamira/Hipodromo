@@ -2,34 +2,33 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Caballo } from '../pages/tab3/caballo.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root',
 })
 export class CaballosService {
-    // apiUrl = 'http://192.168.100.138/hipodromo_api/public/api';
-    apiUrl = 'http://localhost/hipodromo_api/public/api';
 
     constructor(private http: HttpClient ){}
 
     getCaballos(): Observable<Caballo[]> {
-        return this.http.get<Caballo[]>(`${this.apiUrl}/caballos`);
+        return this.http.get<Caballo[]>(`${environment.baseUrl}/caballos`);
     }
 
     addCaballo(caballo: Caballo): Observable<Caballo>{
-        return this.http.post<Caballo>(`${this.apiUrl}/caballos`,caballo);
+        return this.http.post<Caballo>(`${environment.baseUrl}/caballos`,caballo);
     }
 
     updateCaballo(caballoId: number, product: Caballo): Observable<Caballo>{
         return this.http.put<Caballo>(
-            `${this.apiUrl}/caballos/${caballoId}`,
+            `${environment.baseUrl}/caballos/${caballoId}`,
             product
         );
     }
 
     deleteCaballo(caballoId: number): Observable<Caballo>{
         return this.http.delete<Caballo>(
-            `${this.apiUrl}/products/${caballoId}`
+            `${environment.baseUrl}/caballos/${caballoId}`
         );
     }
 }
