@@ -10,27 +10,21 @@
   </ion-header>
   
   <ion-content>
-    <ion-list>
-      <ion-card *ngFor="let carrera of carreras$|async" (click)="openDetailModal(carrera)">
-        <ion-card-content>
-        <ion-grid fixed>
-          <ion-row>
-            <ion-col size="3">
-              <ion-thumbnail>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let carrera of carreras$|async" (click)="openDetailModal(carrera)">
+          <ion-card>
+            <ion-card-content>
+              <ion-thumbnail slot="start">
                 <img src="../../../assets/iconos/flag.svg" />
               </ion-thumbnail>
-            </ion-col>
-            <ion-col size="9">
-            
               <ion-card-subtitle>{{carrera.fecha}}</ion-card-subtitle>
               <ion-card-subtitle>Edad: {{carrera.hora}}</ion-card-subtitle>
               <ion-card-subtitle>Nacionalidad: {{carrera.distancia}}</ion-card-subtitle>
               <ion-card-subtitle>Nacionalidad: {{carrera.numero_participantes}}</ion-card-subtitle>
-            
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-      </ion-card>
-    </ion-list>
-    </ion-content>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

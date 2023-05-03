@@ -16,15 +16,23 @@
 <ion-content class="ion-padding"> 
 <form [formGroup]="form">
 
-  <ion-item >
+  <!-- <ion-item >
     <ion-label position="floating">Fecha</ion-label>
     <ion-input  formControlName="fecha" (ionInput)="onFecha($event)" #ionInputFecha></ion-input>
+  </ion-item> -->
+  <ion-item>
+    <ion-label>Fecha</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" presentation="date" formControlName="fecha" ></ion-datetime>
   </ion-item>  
 
   <ion-item >
     <ion-label position="floating">Hora</ion-label>
     <ion-input  formControlName="hora" (ionInput)="onHora($event)" #ionInputHora></ion-input>
   </ion-item>
+  <!-- <ion-item >
+    <ion-label position="floating">Hora</ion-label>
+    <ion-datetime displayFormat="HH:mm:ss" presentation="time" formControlName="hora"></ion-datetime>
+  </ion-item> -->
 
   <ion-item >
     <ion-label position="floating">Distancia</ion-label>

@@ -2,12 +2,13 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { take } from 'rxjs/operators';
 import { AddCarreraPage  } from '../add-carrera/add-carrera.page';
-import { CarrerasService } from '../../../services/carreras.service';
 import { Carrera } from '../../tab1/carrera.model';
+import { CarrerasService } from '../../../services/carreras.service';
+
 
 
 @Component({
-  selector: 'app-detail',
+  selector: 'app-d_carrera',
   templateUrl: './d_carrera.component.html',
   styleUrls: ['./d_carrera.component.scss'],
 })
