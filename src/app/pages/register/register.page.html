@@ -1,0 +1,26 @@
+<ion-header class="ion-no-border">
+  
+</ion-header>
+
+<ion-img src="assets/images/header4.png"></ion-img>
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="form">
+    <div>
+      <ion-label>Nombre </ion-label>
+      <ion-input class="input" formControlName="name" placeholder="Nombre"></ion-input>
+    </div>
+    <div>
+      <ion-label>Correo electrónico</ion-label>
+      <ion-input class="input" type="email" formControlName="email" placeholder="Correo electrónico"></ion-input>
+    </div>
+    <div>
+      <ion-label>Contraseña</ion-label>
+      <ion-input class="input" formControlName="password" type="password" placeholder="Contraseña"></ion-input>
+    </div>
+    <ion-button class="full" expand="block" [disabled]="form.invalid" (click)="onRegister()">Registro</ion-button>
+  </form>
+
+  <ion-button expand="block" fill="clear" routerLink="/login">Tengo cuenta</ion-button>
+</ion-content>

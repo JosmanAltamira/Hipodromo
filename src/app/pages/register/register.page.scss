@@ -1,0 +1,30 @@
+.buton1{
+    
+  color: #ffffff;
+  --background:#DDC283;
+  
+}
+
+.header {
+  margin-top: 25%;
+  margin-bottom: 3rem;
+
+  p {
+    margin: 0;
+    color: #444;
+  }
+}
+
+ion-input.input ion-icon {
+  // margin-right: 12px;
+  // margin-top: 12px;
+  margin-left: 7px;
+}
+
+ion-input ion-icon {
+  color: #876c2f
+}
+
+ion-button.full {
+  margin-top: 30px;
+}
