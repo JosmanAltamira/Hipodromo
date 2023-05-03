@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">Hipodromo</string>
-    <string name="title_activity_main">Hipodromo</string>
-    <string name="package_name">com.hipodromo.app</string>
-    <string name="custom_url_scheme">com.hipodromo.app</string>
-</resources>
