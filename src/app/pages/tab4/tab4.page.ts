@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { JinetesService } from '../../services/jinetes.service';
 import { Jinete } from '../tab2/jinete.model';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-tab4',
@@ -21,6 +24,9 @@ export class Tab4Page implements OnInit  {
 
 
   constructor(
+    private authService: AuthService,
+    private alertCtrl: AlertController,
+    private router: Router,
     private carrerasService:CarrerasService,
     private loadingCtrl: LoadingController,
     private jinetesService:JinetesService, 
@@ -41,5 +47,34 @@ export class Tab4Page implements OnInit  {
         return caballos;
       })
     );
+  }
+
+  //cerrar sesion 
+  onLogout() {
+    this.alertCtrl
+      .create({
+        header: 'Cerrar sesión',
+        message: '¿Estás seguro de que quieras cerrar la sesión?',
+        buttons: [
+          { text: 'Quedarse' },
+          {
+            text: 'Salir',
+            handler: () => {
+              this.authService.logout().subscribe({
+                next: () => {
+                  localStorage.removeItem('expenseAppToken');
+                  localStorage.removeItem('name');
+                  this.router.navigateByUrl('/login');
+                },
+                error: (error) => {
+                  // handle error
+                  console.log(error);
+                },
+              });
+            },
+          },
+        ],
+      })
+      .then((alert) => alert.present());
   }
 }

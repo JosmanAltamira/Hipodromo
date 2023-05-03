@@ -1,22 +1,20 @@
 <ion-header class="head">
     <ion-toolbar>
         <ion-title>Json</ion-title>
+
+        <ion-buttons slot="end">
+          <ion-button color="light" mode="ios" (click)="onLogout()">
+            <ion-icon slot="icon-only" color="danger" name="log-out"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let carrera of carreras$|async" >
+  <ion-card>
     <ion-card-content>
-      <ion-card-content>
-        <pre>{{ carrera | json }}</pre>
-      </ion-card-content>
-    </ion-card-content>
-  </ion-card>
-  <ion-card *ngFor="let jinete of jinetes$|async" >
-    <ion-card-content>
-      <ion-card-content>
-        <pre>{{ jinete | json }}</pre>
-      </ion-card-content>
+      <pre>{{ carreras$|async | json }}</pre>
+      <pre>{{ jinetes$|async | json }}</pre>
     </ion-card-content>
   </ion-card>
 </ion-content>
