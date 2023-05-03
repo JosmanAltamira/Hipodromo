@@ -29,7 +29,7 @@ export class D_JineteComponent implements OnInit {
     const modal = await this.modalCtrl.create({
       component: AddJinetePage,
       componentProps: {
-        carrera: this.jinete
+        jinete: this.jinete
       },
     });
     await modal.present();
