@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
-import { UsuarioService } from '../../services/usuario.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,49 +14,42 @@ export class LoginPage {
   form: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
-    private usuarioService: UsuarioService,
     private navCtrl: NavController,
-    private alertCtrl: AlertController
-  ) {
-    this.form = this.fb.group({
-      email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.required]
+    private alertCtrl: AlertController,
+    private loadingCtrl: LoadingController,
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    this.form = new FormGroup({
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
     });
   }
 
-  async login(form) {
-    console.log('login method called');
-  
-    if (!this.form.valid) {
-      console.log('Form is invalid');
-      return;
-    }
-  
-    try {
-      const valido = await this.usuarioService.login(form.value.email, form.value.password);
-  
-      if (valido) {
-        this.navCtrl.navigateRoot('/tabs', { animated: true });
-      } else {
-        const alert = await this.alertCtrl.create({
-          header: 'Error',
-          message: 'Correo electrónico o contraseña incorrectos.',
-          buttons: ['OK']
-        });
-  
-        await alert.present();
-      }
-    } catch (error) {
-      const alert = await this.alertCtrl.create({
-        header: 'Error',
-        message: 'Ha ocurrido un error al iniciar sesión.',
-        buttons: ['OK']
-      });
-  
-      await alert.present();
-      
-    }
+  async onLogin() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Espere por favor...',
+    });
+
+    loading.present();
+
+    this.authService.login(this.form.value).subscribe({
+      next: (response: any) => {
+        loading.dismiss();
+        this.form.reset();
+
+        localStorage.setItem('expenseAppToken', response.token);
+        localStorage.setItem('name', response.name);
+        this.router.navigateByUrl('/tabs');
+      },
+      error: (error) => {
+        loading.dismiss();
+        console.log(error);
+      },
+    });
   }
+
   
 }
