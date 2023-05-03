@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AddProductPageRoutingModule } from './add-caballo-routing.module';
+import { AddCaballoPageRoutingModule } from './add-caballo-routing.module';
 
 import { AddCaballoPage } from './add-caballo.page';
 
@@ -14,7 +14,7 @@ import { AddCaballoPage } from './add-caballo.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    AddProductPageRoutingModule
+    AddCaballoPageRoutingModule
   ],
   declarations: [AddCaballoPage]
 })

@@ -23,9 +23,13 @@
     <ion-label position="floating">Peso</ion-label>
     <ion-input  formControlName="Peso" (ionInput)="onPeso($event)" #ionInputPeso></ion-input>
   </ion-item>
-  <ion-item >
+  <!-- <ion-item >
     <ion-label position="floating">Fecha de nacimiento</ion-label>
     <ion-input maxlength="25" formControlName="Fecha_Nacimiento" (ionInput)="onNacimiento($event)" #ionInputNacimiento></ion-input>
+  </ion-item> -->
+  <ion-item>
+    <ion-label>Fecha de nacimiento</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" presentation="date" formControlName="Fecha_Nacimiento" ></ion-datetime>
   </ion-item>
   <ion-item >
     <ion-label position="floating">Raza</ion-label>

@@ -102,7 +102,7 @@ export class AddCaballoPage implements OnInit {
 
   onRaza(ev) {
     const value = ev.target!.value;
-    const filteredValue = value.replace(/[^a-zA-Z]+/g,'');
+    const filteredValue = value.replace(/[^a-zA-Z ]+/g,'');
     this.ionInputRaza.value = this.inputModel = filteredValue;
   }
 
@@ -120,7 +120,7 @@ export class AddCaballoPage implements OnInit {
 
   onPropietario(ev) {
     const value = ev.target!.value;
-    const filteredValue = value.replace(/[^a-zA-Z]+/g,'');
+    const filteredValue = value.replace(/[^a-zA-Z ]+/g,'');
     this.ionInputPropietario.value = this.inputModel = filteredValue;
   }
 }
