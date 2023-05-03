@@ -10,25 +10,10 @@ const routes: Routes = [
   },
  
   {
-    path: 'loginscreen',
-    loadChildren: () => import('./pages/loginscreen/loginscreen.module').then( m => m.LoginscreenPageModule)
-  },
-   
-
-  {
     path: '',
     loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
   },
-
-   {
-    path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  },   
-  {
-    path: 'add-usuario',
-    loadChildren: () => import('./pages/add-usuario/add-usuario.module').then( m => m.AddUsuarioPageModule)
-  },
+ 
   {
     path: 'add-caballo',
     loadChildren: () => import('./pages/caballos/add-caballo/add-caballo.module').then( m => m.AddCaballoPageModule)
@@ -41,6 +26,15 @@ const routes: Routes = [
     path: 'add-jinete',
     loadChildren: () => import('./pages/jinetes/add-jinete/add-jinete.module').then( m => m.AddJinetePageModule)
   },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },  
 ];
 
 
