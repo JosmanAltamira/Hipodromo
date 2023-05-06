@@ -15,9 +15,9 @@
       <ion-col size="6" *ngFor="let caballo of caballos$|async" (click)="openDetailModal(caballo)">
         <ion-card>
           <ion-card-content>
-            <ion-thumbnail slot="start">
+            <ion-title style="text-align:center;">
               <img src="../../../assets/iconos/horse.svg" />
-            </ion-thumbnail>
+            </ion-title>
             <ion-card-title>{{caballo.Nombre}}</ion-card-title>
             <ion-card-subtitle>Peso: {{caballo.Peso}}</ion-card-subtitle>
             <ion-card-subtitle>Nacimiento: {{caballo.Fecha_Nacimiento}}</ion-card-subtitle>
