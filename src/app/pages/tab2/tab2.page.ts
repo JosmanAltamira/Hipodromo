@@ -66,4 +66,15 @@ export class Tab2Page implements OnInit  {
       );
     }
   }
+
+  buscar(event) {
+    const texto = event.detail.value;
+    this.jinetes$ = this.jinetesService.getJinetes().pipe(
+      map(jinetes =>{
+        return jinetes.filter(cab => {
+          return cab.nombre.toLowerCase().includes(texto.toLowerCase());
+        });
+      })
+    );
+  }
 }
