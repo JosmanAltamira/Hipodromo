@@ -10,7 +10,7 @@
 ## Imagenes
 
 <p align="center">
-  <img width="30%" src="https://github.com/JosmanAltamira/imagenes/blob/main/Hipodromo/pag1.png">
-  <img width="30%" src="https://github.com/JosmanAltamira/imagenes/blob/main/Hipodromo/pag2.png">
-  <img width="30%" src="https://github.com/JosmanAltamira/imagenes/blob/main/Hipodromo/pag3.png">
+  <img width="30%" src="https://gitlab.com/imagenes1/hipodromo/-/raw/main/pag1.png">
+  <img width="30%" src="https://gitlab.com/imagenes1/hipodromo/-/raw/main/pag2.png">
+  <img width="30%" src="https://gitlab.com/imagenes1/hipodromo/-/raw/main/pag3.png">
 </p>
