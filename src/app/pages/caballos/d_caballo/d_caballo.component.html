@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{caballo.Nombre}}</ion-title>
+    <ion-title>{{caballo.nombre}}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="closeModal()">
         <ion-icon slot="start" name="close"></ion-icon>
@@ -14,10 +14,10 @@
 
   <div class="ion-padding">
     <ion-text>
-      <h1>{{caballo.Peso}}</h1>
-      <h1>{{caballo.Raza}}</h1>
-      <h1>{{caballo.Propietario}}</h1>
-      <h1>{{caballo.Fecha_Nacimiento}}</h1>
+      <h1>{{caballo.peso}}</h1>
+      <h1>{{caballo.raza}}</h1>
+      <h1>{{caballo.propietario}}</h1>
+      <h1>{{caballo.fecha_nacimiento}}</h1>
     </ion-text>
 
     <ion-button expand="block" (click)="openEditModal()">Editar</ion-button>
