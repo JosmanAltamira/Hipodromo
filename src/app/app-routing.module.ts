@@ -7,7 +7,7 @@ const routes: Routes = [
 
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./Auth/login/login.module').then( m => m.LoginPageModule)
   },
  
   {
@@ -32,7 +32,7 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./Auth/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: '',
