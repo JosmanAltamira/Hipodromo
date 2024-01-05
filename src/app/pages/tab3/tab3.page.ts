@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { D_CaballoComponent } from '../caballos/d_caballo/d_caballo.component';
 import { CaballosService } from '../../services/caballos.service';
-import { Caballo } from './caballo.model';
+import { Caballo } from '../../models/caballo.model';
 
 @Component({
   selector: 'app-tab3',

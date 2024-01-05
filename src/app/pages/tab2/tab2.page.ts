@@ -3,7 +3,7 @@ import { LoadingController, ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { JinetesService } from '../../services/jinetes.service';
-import { Jinete } from './jinete.model';
+import { Jinete } from '../../models/jinete.model';
 import { D_JineteComponent } from '../jinetes/d_jinete/d_jinete.component';
 
 

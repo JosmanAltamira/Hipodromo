@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { D_CarreraComponent } from '../carreras/d_carrera/d_carrera.component';
 import { CarrerasService } from '../../services/carreras.service';
-import { Carrera } from './carrera.model';
+import { Carrera } from '../../models/carrera.model';
 
 
 @Component({

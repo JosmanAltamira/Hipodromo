@@ -3,7 +3,7 @@ import { LoadingController, ModalController } from '@ionic/angular';
 import { take } from 'rxjs/operators';
 import { AddJinetePage  } from '../add-jinete/add-jinete.page';
 import { JinetesService } from '../../../services/jinetes.service';
-import { Jinete } from '../../tab2/jinete.model';
+import { Jinete } from '../../../models/jinete.model';
 
 @Component({
   selector: 'app-detail',

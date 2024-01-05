@@ -4,7 +4,7 @@ import { LoadingController, ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import type { IonInput } from '@ionic/angular';
-import { Jinete } from '../../tab2/jinete.model';
+import { Jinete } from '../../../models/jinete.model';
 import { JinetesService } from '../../../services/jinetes.service';
 
 @Component({

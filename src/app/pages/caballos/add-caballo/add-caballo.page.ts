@@ -3,7 +3,7 @@ import {  FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms
 import { LoadingController, ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { Caballo } from '../../tab3/caballo.model';
+import { Caballo } from '../../../models/caballo.model';
 import { CaballosService } from '../../../services/caballos.service';
 import type { IonInput } from '@ionic/angular';
 
@@ -43,11 +43,11 @@ export class AddCaballoPage implements OnInit {
 
   initAddCaballoForm(){
     this.form = new FormGroup({
-      Nombre: new FormControl(null,[Validators.required]),
-      Peso: new FormControl(null,[Validators.required]),
-      Raza: new FormControl(null,[Validators.required]),
-      Fecha_Nacimiento: new FormControl(null,[Validators.required]),
-      Propietario: new FormControl(null,[Validators.required]),
+      nombre: new FormControl(null,[Validators.required]),
+      peso: new FormControl(null,[Validators.required]),
+      raza: new FormControl(null,[Validators.required]),
+      fecha_nacimiento: new FormControl(null,[Validators.required]),
+      propietario: new FormControl(null,[Validators.required]),
     })
   }
 
@@ -57,17 +57,18 @@ export class AddCaballoPage implements OnInit {
 
   setFormValues(){
     this.form.setValue({
-      Nombre: this.caballo.Nombre,
-      Peso: this.caballo.Peso,
-      Raza: this.caballo.Raza,
-      Fecha_Nacimiento: this.caballo.Fecha_Nacimiento,
-      Propietario: this.caballo.Propietario,
+      nombre: this.caballo.nombre,
+      peso: this.caballo.peso,
+      raza: this.caballo.raza,
+      fecha_nacimiento: this.caballo.fecha_nacimiento,
+      propietario: this.caballo.propietario,
     });
     this.form.updateValueAndValidity();
   }
   
 
  async submitCaballo(){
+   console.log(this.form.value);
    const loading = await this.loadingCtrl.create({message:'Loading...'});
    loading.present();
 
@@ -78,12 +79,14 @@ export class AddCaballoPage implements OnInit {
         this.caballo.id, 
         this.form.value
         );
+        
     }else {
      response = this.caballosService
       .addCaballo(this.form.value)
     }
 
     response.pipe(take(1)).subscribe((caballo)=>{
+      console.log(caballo);
       this.form.reset();
       loading.dismiss();
 
@@ -91,6 +94,7 @@ export class AddCaballoPage implements OnInit {
         this.closeModal(caballo)
       }
     });
+    
   }
 
 

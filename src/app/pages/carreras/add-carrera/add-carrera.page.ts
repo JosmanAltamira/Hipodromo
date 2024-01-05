@@ -3,7 +3,7 @@ import {  FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms
 import { LoadingController, ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { Carrera } from '../../tab1/carrera.model';
+import { Carrera } from '../../../models/carrera.model';
 import { CarrerasService } from '../../../services/carreras.service';
 import type { IonInput } from '@ionic/angular';
 // import { DatePicker } from '@ionic-native/date-picker/ngx';
@@ -66,6 +66,7 @@ export class AddCarreraPage implements OnInit {
   
 
  async submitCarrera(){
+   console.log(this.form.value);
    const loading = await this.loadingCtrl.create({message:'Procesando...'});
    loading.present();
 

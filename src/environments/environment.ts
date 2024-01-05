@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://192.168.100.138/hipodromo_api/public/api',
+  baseUrl: 'http://localhost/ApiHipodromo/public/api'
 };
 
 /*

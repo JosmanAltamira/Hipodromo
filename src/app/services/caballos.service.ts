@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Caballo } from '../pages/tab3/caballo.model';
+import { Caballo } from '../models/caballo.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

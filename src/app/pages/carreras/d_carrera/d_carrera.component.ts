@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { take } from 'rxjs/operators';
 import { AddCarreraPage  } from '../add-carrera/add-carrera.page';
-import { Carrera } from '../../tab1/carrera.model';
+import { Carrera } from '../../../models/carrera.model';
 import { CarrerasService } from '../../../services/carreras.service';
 
 

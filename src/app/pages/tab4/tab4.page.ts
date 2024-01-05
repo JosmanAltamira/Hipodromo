@@ -1,11 +1,11 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { CarrerasService } from '../../services/carreras.service';
-import { Carrera } from '../tab1/carrera.model';
+import { Carrera } from '../../models/carrera.model';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { JinetesService } from '../../services/jinetes.service';
-import { Jinete } from '../tab2/jinete.model';
+import { Jinete } from '../../models/jinete.model';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from '../../services/auth.service';

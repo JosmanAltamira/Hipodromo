@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { take } from 'rxjs/operators';
 import { AddCaballoPage  } from '../add-caballo/add-caballo.page';
-import { Caballo } from '../../tab3/caballo.model';
+import { Caballo } from '../../../models/caballo.model';
 import { CaballosService } from '../../../services/caballos.service';
 
 @Component({

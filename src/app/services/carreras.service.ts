@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Carrera } from '../pages/tab1/carrera.model';
+import { Carrera } from '../models/carrera.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
