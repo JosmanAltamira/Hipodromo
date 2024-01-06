@@ -17,7 +17,7 @@ export class AppInterceptor implements HttpInterceptor {
   }
 
   addAuthToken(request: HttpRequest<any>) {
-    const token = localStorage.getItem('expenseAppToken');
+    const token = localStorage.getItem('Token');
 
     return request.clone({
       setHeaders: {

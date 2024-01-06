@@ -40,7 +40,7 @@ export class LoginPage {
         loading.dismiss();
         this.form.reset();
 
-        localStorage.setItem('expenseAppToken', response.token);
+        localStorage.setItem('Token', response.token);
         localStorage.setItem('name', response.name);
         this.router.navigateByUrl('/tabs');
       },

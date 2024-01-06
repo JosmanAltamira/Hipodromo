@@ -62,7 +62,7 @@ export class Tab4Page implements OnInit  {
             handler: () => {
               this.authService.logout().subscribe({
                 next: () => {
-                  localStorage.removeItem('expenseAppToken');
+                  localStorage.removeItem('Token');
                   localStorage.removeItem('name');
                   this.router.navigateByUrl('/login');
                 },

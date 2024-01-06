@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    const token = localStorage.getItem('expenseAppToken');
+    const token = localStorage.getItem('Token');
     return !!token;
   }
 }
