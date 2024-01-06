@@ -12,17 +12,17 @@ const routes: Routes = [
  
   {
     path: 'add-caballo',
-    canActivate: [AuthGuard],
+    canActivate: [TabsGuard],
     loadChildren: () => import('./pages/caballos/add-caballo/add-caballo.module').then( m => m.AddCaballoPageModule)
   },
   {
     path: 'add-carrera',
-    canActivate: [AuthGuard],
+    canActivate: [TabsGuard],
     loadChildren: () => import('./pages/carreras/add-carrera/add-carrera.module').then( m => m.AddCarreraPageModule)
   },
   {
     path: 'add-jinete',
-    canActivate: [AuthGuard],
+    canActivate: [TabsGuard],
     loadChildren: () => import('./pages/jinetes/add-jinete/add-jinete.module').then( m => m.AddJinetePageModule)
   },
   {
